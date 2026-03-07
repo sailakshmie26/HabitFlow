@@ -10,12 +10,22 @@ const habitSlice = createSlice({
    name:'habits',
    initialState,
    reducers:{
-    addHabit: (state)=>{
-       state.habits.push("habit1")
+    addHabit: (state, action)=>{
+       state.habits.push(action.payload)
     },
     
-    getHabit : ()=>{
-
+    deleteHabit : (state, action)=>{
+       state.habits = state.habits.filter(
+         habit => habit.id !== action.payload
+       )
+    },
+    completeHabit : (state, action)=>{
+      const habit = state.habits.find(
+         e => e.id === action.payload
+      )
+      if(habit){
+         habit.streak += 1
+      }
     }
    }
 })
