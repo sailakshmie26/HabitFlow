@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadHabits, saveHabits } from "../../utils/storage";
+import { calculateStreak } from "../../utils/streakCalculator";
 
 const initialState = {
-    habits : [],
+    habits : loadHabits(),
     numbers : 0,
 
 }
@@ -12,21 +14,29 @@ const habitSlice = createSlice({
    reducers:{
     addHabit: (state, action)=>{
        state.habits.push(action.payload)
+       saveHabits(state.habits)
     },
     
     deleteHabit : (state, action)=>{
-       state.habits = state.habits.filter((habit)=>{
-         return habit.id !== action.payload.id
-      }
-       )
+       state.habits = state.habits.filter((habit)=>
+         habit.id !== action.payload.id                
+      
+       );
+       saveHabits(state.habits) 
     },
     completedHabit : (state, action)=>{
       const habit = state.habits.find(
-         e => e.id === action.payload
+         h => h.id === action.payload
       )
       if(habit){
-         if(!habit.streak)habit.streak = 0
-         habit.streak += 1
+         if(!habit.completedDates){
+          habit.completedDates = []
+         }
+         const today = new Date().toISOString()
+         habit.completedDates.push(today)
+         habit.streak = calculateStreak(habit.completedDates)
+         saveHabits(state.habits)
+        
       }
     }
    }

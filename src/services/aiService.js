@@ -1,22 +1,33 @@
 export const getAISuggestions = async (habits) => {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    
+    try {
+        const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${import.meta.env.VITE_GEMINI_KEY}`, 
+        {
         method: "POST",
         headers: {
             "Content-Type" : "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_KEY}`,
         },
+
         body: JSON.stringify({
-            model: "gpt-4o-mini",
-            messages: [
+            contents: [
                 {
-                    role: "user",
-                    content: `Based on these habits: ${habits.join(", ")}, suggest
-                    3 new habits.`
+                    parts:[
+                        {
+                            text: `User habits: ${habits.join(",")}.
+                            Suggest 3 new productive habits.`
+                        }
+                    ]
                 }
             ]
         })
     });
 const data = await response.json();
-return data.choices[0].message.content;
+return data.candidates[0].content.parts[0].text;
+
+} catch(error){
+  console.log("AI Suggestion error:", error);
+  return "Could not generate suggestions."
+  }
 }
 
