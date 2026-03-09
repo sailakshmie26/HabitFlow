@@ -15,15 +15,17 @@ const habitSlice = createSlice({
     },
     
     deleteHabit : (state, action)=>{
-       state.habits = state.habits.filter(
-         habit => habit.id !== action.payload
+       state.habits = state.habits.filter((habit)=>{
+         return habit.id !== action.payload.id
+      }
        )
     },
-    completeHabit : (state, action)=>{
+    completedHabit : (state, action)=>{
       const habit = state.habits.find(
          e => e.id === action.payload
       )
       if(habit){
+         if(!habit.sstreak)habit.streak = 0
          habit.streak += 1
       }
     }
@@ -31,4 +33,4 @@ const habitSlice = createSlice({
 })
 
 export default habitSlice.reducer;
-export const {addHabit, getHabit} = habitSlice.actions;
+export const {addHabit, deleteHabit, completedHabit} = habitSlice.actions;
