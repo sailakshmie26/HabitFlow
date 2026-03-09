@@ -32,16 +32,16 @@ const HabitForm = () => {
               }))
               setHabitName("");
             }}
-              className="flex-shrink-0 bg-blue-500 hover:bg-black-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
+              className="flex-shrink-0 bg-blue-500 border-blue-500 text-sm border-4 text-white py-1 px-2 rounded"
               type="button"
             >
               Add
             </button>
             <button
             onClick={()=>{
-              input.value = ""
+              setHabitName("")
             }}
-              className="flex-shrink-0 border-transparent border-4 text-black-500 hover:text-black-800 text-sm py-1 px-2 rounded"
+              className="flex-shrink-0 border-transparent border-4 text-black-500 text-sm py-1 px-2 rounded"
               type="button"
             >
               Cancel
