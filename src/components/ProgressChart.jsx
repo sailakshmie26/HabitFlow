@@ -1,5 +1,4 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { RechartsDevtools } from '@recharts/devtools';
 
 const data = [
   {day:"Sun", completed: 1},
@@ -19,24 +18,14 @@ const ProgressChart = () => {
       <h3>Weekly Chart</h3>
 
       <BarChart
-      style={{ width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}
-      responsive
-      data={data}
-      margin={{
-        top: 5,
-        right: 0,
-        left: 0,
-        bottom: 5,
-      }}
+      width={600} height={300} data={data}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis width="auto" />
+      <XAxis dataKey="day" />
+      <YAxis/>
       <Tooltip />
       <Legend />
-      <Bar dataKey="day" fill="#8884d8" activeBar={{ fill: 'pink', stroke: 'blue' }} radius={[10, 10, 0, 0]} />
-      <Bar dataKey="completed" fill="#82ca9d" activeBar={{ fill: 'gold', stroke: 'purple' }} radius={[10, 10, 0, 0]} />
-      <RechartsDevtools />
+      <Bar dataKey="completed" fill="#82ca9d"/>
     </BarChart>
 
     </>

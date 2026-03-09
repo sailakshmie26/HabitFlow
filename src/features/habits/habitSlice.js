@@ -25,7 +25,7 @@ const habitSlice = createSlice({
          e => e.id === action.payload
       )
       if(habit){
-         if(!habit.sstreak)habit.streak = 0
+         if(!habit.streak)habit.streak = 0
          habit.streak += 1
       }
     }
