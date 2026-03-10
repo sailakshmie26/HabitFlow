@@ -13,18 +13,30 @@ const AiSuggestions = () => {
   }
   return (
     <>
-      <h2>AI Habit Coach</h2>
+     <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">
+      <h2 className="text-xl font-bold mb-3">
+        AI Habit Coach
+      </h2>
       
-      <button onClick={handAISuggestions}>
+      <button 
+      onClick={handAISuggestions}
+      className="bg-purple-500 text-white px-4 py-2 rounded mb-4">
        Generate AI Suggestions
       </button>
-
-      {
+       
+       <div className="space-y-2">
+              {
         suggestions.map((item, i)=>(
-          <p key={i}>{item}</p>
+          <div 
+          key={i}
+          className="bg-white p-3 rounded shadow">
+          {item}
+          </div>
         ))
       }
-      
+       </div>
+
+     </div>     
     </>
   )
 }

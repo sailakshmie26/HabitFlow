@@ -6,9 +6,9 @@ const Footer = () => {
       <footer>
         <h5>
           <img src={habitFlowIcon} alt="icon" width="40px" />
-          HABIT PLUS
+          HABIT FLOW
         </h5>
-        <p>© 2026 HabitPlus. Made with ❤️ for habit builders by Sailakshmy</p>
+        <p>© 2026 HabitFlow. Made with ❤️ for habit builders by Sailakshmy</p>
       </footer>
     </>
   );

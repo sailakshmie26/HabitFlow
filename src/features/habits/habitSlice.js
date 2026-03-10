@@ -44,3 +44,4 @@ const habitSlice = createSlice({
 
 export default habitSlice.reducer;
 export const {addHabit, deleteHabit, completedHabit} = habitSlice.actions;
+
