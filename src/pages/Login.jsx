@@ -1,68 +1,72 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {loginUser} from '../features/auth/authSlice'
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
+  const [formdata, setFormdata] = useState({
+    email:'',
+    password:''
+  })
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleInput = (e) => {
+  const {name,value} = e.target
+  setFormdata((prev) => ({...prev,[name]:value}))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(loginUser(formdata));
+    navigate('/dashboard')
+    setFormdata({
+      email:'',
+      password:"",
+    })
+  }
+
   return (
     <>
       <Navbar />
-      <div>
-        <h2>
+      <div className="min-h-screen flex flex-col justify-center items-center gap-6">
+        <h2 className="text-center max-w-xl">
           Transform your daily habits into an epic adventure. Habit Flow is here
           to help level up your life the way you have always wanted.
         </h2>
+       <form
+       onSubmit={handleSubmit}
+       action="" 
+       className="flex flex-col p-6 shadow-xl gap-4 w-80">
 
+        <input 
+        onChange={handleInput}
+        value={formdata.email}
+        name="email"
+        className="border outline-0 rounded border-gray-400 p-2" 
+        type="email" placeholder="Email"/>
+
+        <input 
+        onChange={handleInput}
+        value={formdata.password}
+        name="password"
+        className="border outline-0 rounded border-gray-400 p-2" 
+        type="password" placeholder="Password"/>
+        
+        <button
+        type="submit"
+        className="bg-orange-500 text-white text-xl rounded p-2">
+        Login</button>
+
+        <p>New User? <Link to={'/register'}>
+        Register Here</Link></p>
+       </form>
         <div>
-          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
-              >
-                Username
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="username"
-                type="text"
-                placeholder="Username"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                for="password"
-              >
-                Password
-              </label>
-              <input
-                className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="password"
-                type="password"
-                placeholder="******************"
-              />
-              <p className="text-red-500 text-xs italic">
-                Please choose a password.
-              </p>
-            </div>
-            <div className="flex items-center justify-between">
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-              >
-                Sign In
-              </button>
-              <a
-                className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                href="#"
-              >
-                Forgot Password?
-              </a>
-              <p>
-                New user? <Link to="/register">Register here</Link>
-              </p>
-            </div>
-          </form>
+
         </div>
       </div>
       <Footer />
@@ -71,3 +75,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

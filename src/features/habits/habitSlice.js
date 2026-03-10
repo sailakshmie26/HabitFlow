@@ -32,11 +32,12 @@ const habitSlice = createSlice({
          if(!habit.completedDates){
           habit.completedDates = []
          }
-         const today = new Date().toISOString()
+         const today = new Date().toISOString().split("T")[0]
+         if(!habit.completedDates.includes(today)){
          habit.completedDates.push(today)
+         }
          habit.streak = calculateStreak(habit.completedDates)
-         saveHabits(state.habits)
-        
+         saveHabits(state.habits)       
       }
     }
    }
