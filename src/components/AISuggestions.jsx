@@ -34,6 +34,7 @@ const AiSuggestions = () => {
               {item}
             </div>
           ))}
+
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-const getAISuggestions = async (habits) => {
+export const getAISuggestions = async (habits) => {
 
   try {
     const response = await fetch(

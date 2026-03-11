@@ -1,16 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { useSelector } from 'react-redux';
 
-// const data = [
-//   {day:"Sun", completed: 1},
-//   {day:"Mon", completed: 5},
-//   {day:"Tue", completed: 6},
-//   {day:"Wed", completed: 3},
-//   {day:"Thu", completed: 2},
-//   {day:"Fri", completed: 4},
-//   {day:"Sat", completed: 2},
-
-// ]
 
 const ProgressChart = () => {
   const habits = useSelector((state) => state.habits.habits)
