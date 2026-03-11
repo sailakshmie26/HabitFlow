@@ -7,7 +7,7 @@ const HabitCard = () => {
   return (
   <>
    {habits.map((habit) => (
-   <div key={habit.id} className="max-w-sm rounded shadow-lg p-4 mb-4">
+   <div key={habit.id} className="max-w-sm rounded shadow-lg p-4 mb-4 bg-white">
      <h3 className="font-bold text-xl mb-2">
        {habit.habitName}
      </h3>
@@ -26,7 +26,7 @@ const HabitCard = () => {
        </button>
        <button
          onClick={() => {
-           dispatch(deleteHabit(habit));
+           dispatch(deleteHabit(habit.id));
          }}
          className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
        >

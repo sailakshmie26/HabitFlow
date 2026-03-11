@@ -19,8 +19,7 @@ const habitSlice = createSlice({
     
     deleteHabit : (state, action)=>{
        state.habits = state.habits.filter((habit)=>
-         habit.id !== action.payload.id                
-      
+         habit.id !== action.payload                   
        );
        saveHabits(state.habits) 
     },

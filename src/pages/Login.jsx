@@ -23,7 +23,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(loginUser(formdata));
-    navigate('/dashboard')
+    const user = JSON.parse(localStorage.getItem("currentUser"))
+    if(user ){
+      navigate('/dashboard')
+    }
+ 
     setFormdata({
       email:'',
       password:"",
@@ -41,28 +45,28 @@ const Login = () => {
        <form
        onSubmit={handleSubmit}
        action="" 
-       className="flex flex-col p-6 shadow-xl gap-4 w-80">
+       className="flex flex-col p-6 rounded shadow-xl gap-4 w-96">
 
         <input 
         onChange={handleInput}
         value={formdata.email}
         name="email"
-        className="border outline-0 rounded border-gray-400 p-2" 
+        className="border outline-0 rounded-full border-gray-400 p-2" 
         type="email" placeholder="Email"/>
 
         <input 
         onChange={handleInput}
         value={formdata.password}
         name="password"
-        className="border outline-0 rounded border-gray-400 p-2" 
+        className="border outline-0 rounded-full border-gray-400 p-2" 
         type="password" placeholder="Password"/>
         
         <button
         type="submit"
-        className="bg-orange-500 text-white text-xl rounded p-2">
+        className="bg-orange-500 text-white text-xl rounded-full p-2">
         Login</button>
 
-        <p>New User? <Link to={'/register'}>
+        <p className="text-center">New User? <Link to={'/register'}>
         Register Here</Link></p>
        </form>
         <div>

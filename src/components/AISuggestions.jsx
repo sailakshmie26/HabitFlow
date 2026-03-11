@@ -10,7 +10,10 @@ const AiSuggestions = () => {
 
   const habits = useSelector((state) => state.habits.habits);
   const [suggestions, setSuggestions] = useState([]);
-  const handAISuggestions = async () => {
+  const handleAISuggestions = async () => {
+    if(habits.length === 0){
+      return alert("Add some habits first!")
+    }
     const habitNames = habits.map((habit) => habit.habitName);
     const result = await getAISuggestions(habitNames);
     const formatted = result.split("\n");
@@ -22,7 +25,7 @@ const AiSuggestions = () => {
         <h2 className="text-xl font-bold mb-3">AI Habit Coach</h2>
 
         <button
-          onClick={handAISuggestions}
+          onClick={handleAISuggestions}
           className="bg-purple-500 text-white px-4 py-2 rounded mb-4"
         >
           Generate AI Suggestions

@@ -1,7 +1,9 @@
 import habitFlowIcon from "../assets/habitFlowIcon.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Navbar = ({isLoggedIn}) => {
+const Navbar = () => {
+  const isLoggedIn = useSelector((state) => state.users.loggedinUser)
   return (
     <>
     <div 

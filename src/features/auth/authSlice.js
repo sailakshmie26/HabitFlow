@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const storedUser = localStorage.getItem('loggedInUser')
+const storedUser = JSON.parse(localStorage.getItem('storedUser'))
+const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
 const initialState = {
-    user: storedUser? JSON.parse(storedUser) : null
+    users: storedUser || [] ,
+    loggedinUser : currentUser || null
 }
 
 const authSlice = createSlice({
@@ -11,21 +13,41 @@ const authSlice = createSlice({
     initialState,
     reducers:{
        register:(state, action)=>{
-        
+        const {email} = action.payload;
+        const existingUser = state.users.find((x)=>{
+           return x.email === email
+        })
+        if(existingUser){
+            alert("This email is already registered, please login.")
+            return;
+        }
+        state.users.push({id:Date.now(),...action.payload})
+        localStorage.setItem('storedUser', JSON.stringify(state.users))
+        alert("User registered.")
         },
        loginUser: (state, action)=>{
-        state.user = action.payload
-        localStorage.setItem("loggedInUser", JSON.stringify(state.user))
-        alert("Logged in successfully!")
+        const {email, password} = action.payload;
+        const existingUser = state.users.find((x)=>{
+            return x.email === email
+        })
+        if(!existingUser){
+            return alert ("No user found with this email. Please register")
+        }
+        if(existingUser.password !== password){
+            return alert("Invalid credentials!")
+        }
+        state.loggedinUser = existingUser
+        localStorage.setItem('currentUser', JSON.stringify(state.loggedinUser))
+        alert("Logged in!")
        },
-       logoutUser: (state)=>{
-         state.user = null;
-         localStorage.removeItem("loggedInUser")
+       logoutUser: (state)=>{    
+         localStorage.removeItem("currentUser")
+         state.loggedinUser = null;
          alert("Logged out!")
        }
        
     }
 })
 
-export const {loginUser, logoutUser} = authSlice.actions;
+export const {register, loginUser, logoutUser} = authSlice.actions;
 export default authSlice.reducer;

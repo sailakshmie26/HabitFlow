@@ -2,8 +2,8 @@ import React from 'react'
 
 const NotFound = () => {
   return (
-    <div>
-      
+    <div className='text-center mt-20 text-2xl'>
+      404 - PAGE NOT FOUND!
     </div>
   )
 }

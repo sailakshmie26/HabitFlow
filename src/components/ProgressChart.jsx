@@ -1,5 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { useSelector } from 'react-redux';
+import { ResponsiveContainer } from 'recharts';
 
 
 const ProgressChart = () => {
@@ -31,17 +32,20 @@ const ProgressChart = () => {
       <h3
       className='mb-4'>
       Weekly Chart</h3>
-
+      
+      <ResponsiveContainer width="100%" height={300}>
       <BarChart
-      width={600} height={300} data={weeklyData}
-    >
+      data={weeklyData}
+      >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="day" />
       <YAxis/>
       <Tooltip />
       <Legend />
       <Bar dataKey="completed" fill="#82ca9d"/>
-    </BarChart>
+      </BarChart>
+      </ResponsiveContainer>
+
 
     </>
   )

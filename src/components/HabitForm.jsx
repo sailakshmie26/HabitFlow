@@ -24,6 +24,9 @@ const HabitForm = () => {
             />
             <button
             onClick={()=>{
+              if(!habitName.trim()){
+                return alert("Habit cannot be empty!")
+              }
               dispatch(addHabit({
                 id:Date.now(), 
                 habitName:habitName,
