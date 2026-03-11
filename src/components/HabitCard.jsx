@@ -20,7 +20,7 @@ const HabitCard = () => {
          onClick={() => {
            dispatch(completedHabit(habit.id));
          }}
-         className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded"
+         className="bg-blue-400 hover:bg-blue-900 text-white font-bold py-2 px-3 rounded"
        >
          Completed
        </button>
@@ -28,7 +28,7 @@ const HabitCard = () => {
          onClick={() => {
            dispatch(deleteHabit(habit));
          }}
-         className="bg-red-500 hover:bg-pink-700 text-white py-1 px-3 rounded"
+         className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
        >
          Delete
        </button>

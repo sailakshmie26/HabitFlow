@@ -45,17 +45,7 @@ const HabitForm = () => {
               type="button"
             >
               Cancel
-            </button><br />
-            {/* {
-              habits.map((habit)=>{
-                return <div key={habit.id}>{habit.habitName}{""}
-                <button
-                onClick={()=>{
-                  dispatch(deleteHabit(habit))
-                }}>Delete Habit</button>
-                </div>
-              })
-            } */}
+            </button>
           </div>
         </form>
       </div>

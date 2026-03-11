@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col justify-center items-center gap-6">
+      <div className="min-h-screen flex flex-col justify-center items-center gap-3">
         <h2 className="text-center max-w-xl">
           Transform your daily habits into an epic adventure. Habit Flow is here
           to help level up your life the way you have always wanted.
