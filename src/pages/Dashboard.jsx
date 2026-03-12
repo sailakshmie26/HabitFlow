@@ -11,7 +11,7 @@ const Dashboard = () => {
     <>
       <Navbar/>
       <div className="max-w-6xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-6">Welcome back!</h2>
+        <h2 className="text-2xl text-green-900 font-bold mb-6">Welcome!</h2>
 
         <HabitForm />
 

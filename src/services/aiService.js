@@ -28,6 +28,7 @@ export const getAISuggestions = async (habits) => {
       console.log(data);
       return "AI failed to generate suggestions";
     }
+    return data.candidates[0].content.parts[0].text
   } catch (error) {
     console.log("AI Suggestion error:", error);
     return "Could not generate suggestions.";

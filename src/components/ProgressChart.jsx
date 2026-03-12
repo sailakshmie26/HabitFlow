@@ -6,6 +6,7 @@ import { ResponsiveContainer } from 'recharts';
 const ProgressChart = () => {
   const habits = useSelector((state) => state.habits.habits)
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  
   const weeklyData = days.map((day,index)=>{
     let count = 0;
     habits.forEach((habit)=>{

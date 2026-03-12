@@ -10,16 +10,27 @@ const DashboardStats = () => {
 
   return (
     <div 
-    className="bg-slate-100 dark:bg-slate-900 p-6 rounded-lg shadow-md">
+    className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
       <h2
-      className="text-xl font-semibold text-cyan-600 dark:text-cyan-300 mb-4">
+      className="text-xl font-bold text-green-800 mb-4">
       Statistics</h2>
-      <div className="space-y-2 text-slate-700 dark:text-slate-200">
-      <p>Total Habits: <span
-      className="font-bold">{totalHabits}</span></p>
-      <p>Total Streak Points: <span
-      className="font-bold">{totalStreak}</span></p>
-      </div>
+      <div className="grid grid-cols-2 gap-4">
+
+    <div className="bg-blue-50 p-4 rounded-lg text-center">
+      <p className="text-sm text-gray-600">Total Habits</p>
+      <p className="text-2xl font-bold text-blue-600">
+        {totalHabits}
+      </p>
+    </div>
+
+    <div className="bg-green-50 p-4 rounded-lg text-center">
+      <p className="text-sm text-gray-600">Streak Points</p>
+      <p className="text-2xl font-bold text-green-600">
+        {totalStreak}🔥
+      </p>
+    </div>
+
+  </div>
     </div>
   )
 }

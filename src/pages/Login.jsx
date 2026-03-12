@@ -37,8 +37,8 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col justify-center items-center gap-3">
-        <h2 className="text-center max-w-xl">
+      <div className="min-h-[70vh] flex flex-col justify-center items-center gap-3">
+        <h2 className="text-center font-semibold max-w-xl">
           Transform your daily habits into an epic adventure. Habit Flow is here
           to help level up your life the way you have always wanted.
         </h2>
@@ -63,10 +63,11 @@ const Login = () => {
         
         <button
         type="submit"
-        className="bg-orange-500 text-white text-xl rounded-full p-2">
+        className="bg-orange-400 hover:bg-orange-500 text-white text-xl rounded-full p-2">
         Login</button>
 
-        <p className="text-center">New User? <Link to={'/register'}>
+        <p className="text-center font-semibold">New User? <Link
+        className="text-blue-600" to={'/register'}>
         Register Here</Link></p>
        </form>
         <div>

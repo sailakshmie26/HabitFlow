@@ -2,12 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteHabit, completedHabit } from "../features/habits/habitSlice";
 
 const HabitCard = () => {
+
   const dispatch = useDispatch();
   const habits = useSelector((state) => state.habits.habits);
+  
   return (
   <>
+  <div className="space-y-4">
    {habits.map((habit) => (
-   <div key={habit.id} className="max-w-sm rounded shadow-lg p-4 mb-4 bg-white">
+   <div key={habit.id} className="bg-white rounded-xl shadow p-4">
      <h3 className="font-bold text-xl mb-2">
        {habit.habitName}
      </h3>
@@ -36,6 +39,7 @@ const HabitCard = () => {
    </div>
      )
    )}
+   </div>
   </>
   );
 };
