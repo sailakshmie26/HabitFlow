@@ -31,7 +31,8 @@ const HabitForm = () => {
                 id:Date.now(), 
                 habitName:habitName,
                 category: "General",
-                streak:0
+                streak:0,
+                completedDates:[]
               }))
               setHabitName("");
             }}
