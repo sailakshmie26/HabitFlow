@@ -4,8 +4,10 @@ import { useState } from "react";
 
 const HabitForm = () => {
   const [habitName, setHabitName] = useState("");
+  const [category, setCategory] = useState("Health")
+  const currentUser = useSelector((state) => state.users.loggedinUser)
   const dispatch = useDispatch();
-  const habits = useSelector((state) => state.habits.habits)
+  const habits = useSelector(state => state.habits.habits)
   return (
     <>
       <div>
@@ -22,6 +24,20 @@ const HabitForm = () => {
               placeholder="Habit name"
               aria-label="Habit name"
             />
+            
+            <select name="" id=""
+            value={category}
+            onChange={(e)=> setCategory(e.target.value)}
+            className="border border-gray-300 rounded-lg px-3 py-2">
+              <option value="Health">Health</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Learning">Learning</option>
+              <option value="Productivity">Productivity</option>
+              <option value="Mindfulness">Mindfulness</option>
+              <option value="Finance">Finance</option>
+              <option value="Personal">Personal</option>
+            </select>
+
             <button
             onClick={()=>{
               if(!habitName.trim()){
@@ -29,8 +45,9 @@ const HabitForm = () => {
               }
               dispatch(addHabit({
                 id:Date.now(), 
+                userId: currentUser.id,
                 habitName:habitName,
-                category: "General",
+                category: category,
                 streak:0,
                 completedDates:[]
               }))

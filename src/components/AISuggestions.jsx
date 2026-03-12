@@ -5,7 +5,7 @@ import { useState } from "react";
 const AiSuggestions = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const appTitle = import.meta.env.VITE_APP_TITLE;
-  console.log("API URL:", apiUrl);
+  // console.log("API URL:", apiUrl);
   console.log("App Title:", appTitle);
 
   const habits = useSelector((state) => state.habits.habits);

@@ -4,8 +4,6 @@ import { calculateStreak } from "../../utils/streakCalculator";
 
 const initialState = {
     habits : loadHabits(),
-    numbers : 0,
-
 }
 
 const habitSlice = createSlice({
@@ -25,13 +23,15 @@ const habitSlice = createSlice({
     },
     completedHabit : (state, action)=>{
       const habit = state.habits.find(
-         h => h.id === action.payload
+         (h) => h.id === action.payload
       )
-      if(habit){
-         if(!habit.completedDates){
+      if(!habit) return;
+      
+      if(!habit.completedDates){
           habit.completedDates = []
          }
          const today = new Date().toISOString().split("T")[0]
+
          if(!habit.completedDates.includes(today)){
          habit.completedDates.push(today)
          }
@@ -40,7 +40,7 @@ const habitSlice = createSlice({
       }
     }
    }
-})
+)
 
 export default habitSlice.reducer;
 export const {addHabit, deleteHabit, completedHabit} = habitSlice.actions;
