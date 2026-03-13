@@ -9,30 +9,13 @@ import {
 } from "recharts";
 import { useSelector } from "react-redux";
 import { ResponsiveContainer } from "recharts";
+import { getWeeklyChartData } from "../utils/analytics";
 
 const ProgressChart = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  const habits = useSelector((state) => state.habits.habits);
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  const weeklyData = days.map((day, index) => {
-    let count = 0;
-    habits.forEach((habit) => {
-      if (habit.completedDates) {
-        habit.completedDates.forEach((date) => {
-          const d = new Date(date);
-
-          if (d.getDay() === index) {
-            count++;
-          }
-        });
-      }
-    });
-    return {
-      day: day,
-      completed: count,
-    };
-  });
+  const allHabits = useSelector((state) => state.habits.habits);
+  const habits = allHabits.filter((habit) => habit.userId === currentUser?.id);
+  const weeklyData = getWeeklyChartData(habits)
   return (
     <>
       <h2 className="text-xl font-bold mb-3">Your Habit progress simplified</h2>

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const storedUser = JSON.parse(localStorage.getItem('storedUser'))
 const currentUser = JSON.parse(localStorage.getItem('currentUser'))
@@ -13,17 +14,17 @@ const authSlice = createSlice({
     initialState,
     reducers:{
        register:(state, action)=>{
-        const {email} = action.payload;
+        const {email, username} = action.payload;
         const existingUser = state.users.find((x)=>{
            return x.email === email
         })
         if(existingUser){
-            alert("This email is already registered, please login.")
+            toast.error("This email is already registered, please login.")
             return;
         }
         state.users.push({id:Date.now(),...action.payload})
         localStorage.setItem('storedUser', JSON.stringify(state.users))
-        alert("User registered.")
+        toast.success("User registered.")
         },
        loginUser: (state, action)=>{
         const {email, password} = action.payload;
@@ -31,19 +32,19 @@ const authSlice = createSlice({
             return x.email === email
         })
         if(!existingUser){
-            return alert ("No user found with this email. Please register")
+            return toast.error("No user found with this email! Please register.")
         }
         if(existingUser.password !== password){
-            return alert("Invalid credentials!")
+            return toast.error("Invalid credentials!")
         }
         state.loggedinUser = existingUser
         localStorage.setItem('currentUser', JSON.stringify(state.loggedinUser))
-        alert("Logged in!")
+        toast.success("Logged in successfully!")
        },
        logoutUser: (state)=>{    
          localStorage.removeItem("currentUser")
          state.loggedinUser = null;
-         alert("Logged out!")
+         toast.success("Logged out!")
        }
        
     }

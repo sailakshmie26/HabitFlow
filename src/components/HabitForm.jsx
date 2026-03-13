@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addHabit } from "../features/habits/habitSlice";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const HabitForm = () => {
   const [habitName, setHabitName] = useState("");
-  const [category, setCategory] = useState("Health")
+  const [category, setCategory] = useState("")
   const currentUser = useSelector((state) => state.users.loggedinUser)
   const dispatch = useDispatch();
   const habits = useSelector(state => state.habits.habits)
@@ -29,6 +30,7 @@ const HabitForm = () => {
             value={category}
             onChange={(e)=> setCategory(e.target.value)}
             className="border border-gray-300 rounded-lg px-3 py-2">
+              <option value="">Select a category</option>
               <option value="Health">Health</option>
               <option value="Fitness">Fitness</option>
               <option value="Learning">Learning</option>
@@ -41,7 +43,7 @@ const HabitForm = () => {
             <button
             onClick={()=>{
               if(!habitName.trim()){
-                return alert("Habit cannot be empty!")
+                return toast.error("Habit cannot be empty!")
               }
               dispatch(addHabit({
                 id:Date.now(), 
@@ -52,6 +54,8 @@ const HabitForm = () => {
                 completedDates:[]
               }))
               setHabitName("");
+              setCategory("")
+              toast.success("Habit added successfully!")
             }}
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow"
               type="button"
