@@ -1,7 +1,29 @@
 @import "tailwindcss";
 
-.completed-day{
+.react-calendar{
+    width: 100%  !important;
+    max-width: 100%  !important;
+    border: none  !important;
+    background: transparent;
+}
+
+.react-calendar_tile{
+    border-radius: 8px;
+}
+
+.level1{
+    background: #bbf7d0 !important;
+    border-radius: 8px;
+}
+
+.level2{
     background: #4ade80 !important;
     color: white !important;
-    border-radius: 6px;
+    border-radius: 8px;
+}
+
+.level3{
+    background: #15803d !important;
+    color: white !important;
+    border-radius: 8px;   
 }

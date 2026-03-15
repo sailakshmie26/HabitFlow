@@ -37,11 +37,24 @@ const habitSlice = createSlice({
          }
          habit.streak = calculateStreak(habit.completedDates)
          saveHabits(state.habits)       
+      },
+      undoCompletedHabit: (state, action) => {
+         const habit = state.habits.find(h => h.id === action.payload)
+
+         if(habit){
+            const today = new Date().toISOString().split("T")[0]
+            habit.completedDates = habit.completedDates.filter(
+               date => date !== today
+            )
+            if(habit.streak > 0){
+               habit.streak--
+            }
+         }
       }
     }
    }
 )
 
 export default habitSlice.reducer;
-export const {addHabit, deleteHabit, completedHabit} = habitSlice.actions;
+export const {addHabit, deleteHabit, completedHabit, undoCompletedHabit} = habitSlice.actions;
 

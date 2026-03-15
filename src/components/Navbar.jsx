@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="HabitFlowIcon"
             className="w-10 h-10 transform hover:scale-110 transition"
           />
-          <h1 className="text-2xl font-bold tracking-wide">HABIT FLOW</h1>
+          <h1 className="text-3xl font-bold tracking-wide">HABIT FLOW</h1>
         </div>
 
         <div className="flex gap-3 text-xl py-5">

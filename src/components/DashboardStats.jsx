@@ -15,7 +15,7 @@ const DashboardStats = () => {
   const completion = getCompletionPercentage(habits);
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+    <div className="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-100">
       <h2 className="text-xl font-bold text-green-800 mb-4">Statistics</h2>
       <div className="grid grid-cols-3 gap-4">
         <div className="bg-blue-50 p-4 rounded-lg text-center">

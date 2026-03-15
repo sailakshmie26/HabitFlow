@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteHabit, completedHabit } from "../features/habits/habitSlice";
+import { deleteHabit, completedHabit, undoCompletedHabit } from "../features/habits/habitSlice";
 import toast from "react-hot-toast";
 
 const HabitCard = () => {
@@ -18,8 +18,8 @@ const HabitCard = () => {
           <p className="text-gray-500">No habits yet? Add one.</p>
         )}
         {habits.map((habit) => (
-          <div key={habit.id} className="bg-white rounded-xl shadow p-4">
-            <h3 className="font-bold text-xl mb-2">{habit.habitName}</h3>
+          <div key={habit.id} className="bg-purple-50 rounded-xl shadow p-4">
+            <h3 className="font-semibold text-xl text-gray-900 mb-2">{habit.habitName}</h3>
 
             <p className="text-gray-700">
               Category: {habit.category || "General"}
@@ -45,6 +45,15 @@ const HabitCard = () => {
                 className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
               >
                 Delete
+              </button>
+              
+              <button
+              onClick={()=>{
+                dispatch(undoCompletedHabit(habit.id))
+                toast("Completion undone", {icon:"↩️"})
+              }}
+              className="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-3 rounded">
+                Undo
               </button>
             </div>
           </div>

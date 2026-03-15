@@ -18,8 +18,8 @@ const ProgressChart = () => {
   const weeklyData = getWeeklyChartData(habits)
   return (
     <>
-      <h2 className="text-xl font-bold mb-3">Your Habit progress simplified</h2>
-      <h3 className="mb-4">Weekly Chart</h3>
+      <h2 className="text-xl font-bold text-purple-800 mb-3">Your Habit progress simplified</h2>
+      <h2 className="text-xl font-bold text-purple-500 mb-4">Weekly Chart</h2>
 
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={weeklyData}>
