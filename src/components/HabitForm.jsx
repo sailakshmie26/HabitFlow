@@ -12,7 +12,7 @@ const HabitForm = () => {
   return (
     <>
       <div>
-        <h2 className="text-xl font-bold text-purple-500">Add a habit</h2>
+        <h2 className="text-xl font-bold text-purple-800">Add a habit</h2>
       </div>
       <div>
         <form className="w-full max-w-md">

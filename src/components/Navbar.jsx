@@ -15,12 +15,12 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky top-0 z-50 flex justify-between items-center px-6 py-3 bg-purple-300 text-gray-700 shadow-md">
+      <div className="sticky top-0 z-50 flex justify-between items-center px-6 py-0 bg-purple-300 text-gray-700 shadow-md">
         <div className=" flex items-center gap-3 text-black-500 text-xl py-2">
           <img
             src={habitFlowIcon}
             alt="HabitFlowIcon"
-            className="w-10 h-10 transform hover:scale-110 transition"
+            className="w-10 h-10 transform hover:scale-110 duration-500 transition"
           />
           <h1 className="text-3xl font-bold tracking-wide">HABIT FLOW</h1>
         </div>
@@ -35,7 +35,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link to={"/register"}>
-              <button className="bg-blue-300 hover:bg-blue-500 text-gray-700 font-semibold py-2 px-4 rounded-full">
+              <button className="bg-blue-300 hover:bg-blue-500 text-gray-700 font-semibold py-1 px-4 rounded-full">
                 Register
               </button>
             </Link>

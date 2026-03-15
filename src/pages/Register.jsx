@@ -29,17 +29,19 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="mx-auto text-center text-md font-semibold">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center text-md font-semibold">
         <h2>
           Transform your daily habits into an epic adventure. Habit Flow is here
           to help level up your life the way you have always wanted.
         </h2>
         <div>
           <h2>Register now to explore!</h2>
+          <div className="w-full max-w-2xl">
           <form
-          onSubmit={handleSubmit} className="w-full max-w-lg">
+          onSubmit={handleSubmit} 
+          className="bg-white shadow-lg rounded-xl p-10 mt-6">
             <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <div className="w-full px-3 mb-6 md:mb-0">
                 <label
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="username"
@@ -59,7 +61,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <div className="w-full px-3 mb-6 md:mb-0">
                 <label
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="username"
@@ -102,7 +104,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-2">
-              <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <div className="w-full px-3 mb-6 md:mb-0">
                 <label
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   htmlFor="city"
@@ -119,15 +121,18 @@ const Register = () => {
                   placeholder="city"
                   required
                 />
+                <div className="flex justify-center mt-4">
                 <button
                   type="submit"
-                  className="bg-green-500 text-white mt-2 p-2 rounded"
+                  className="bg-green-500 hover:bg-green-600 text-white mt-2 px-6 py-2 rounded"
                 >
                   Register
                 </button>
+                </div>
               </div>
             </div>
           </form>
+          </div>
         </div>
       </div>
       <Footer />
