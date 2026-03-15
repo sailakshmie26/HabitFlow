@@ -50,11 +50,19 @@ const habitSlice = createSlice({
                habit.streak--
             }
          }
+      },
+      editHabit:(state, action) => {
+         const {id, habitName} = action.payload
+         const habit = state.habits.find(h => h.id === id)
+
+         if(habit){
+            habit.habitName = habitName
+         }
       }
     }
    }
 )
 
 export default habitSlice.reducer;
-export const {addHabit, deleteHabit, completedHabit, undoCompletedHabit} = habitSlice.actions;
+export const {addHabit, deleteHabit, completedHabit, undoCompletedHabit, editHabit} = habitSlice.actions;
 

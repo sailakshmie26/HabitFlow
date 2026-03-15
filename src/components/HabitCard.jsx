@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteHabit, completedHabit, undoCompletedHabit } from "../features/habits/habitSlice";
+import { deleteHabit, completedHabit, undoCompletedHabit, editHabit } from "../features/habits/habitSlice";
 import toast from "react-hot-toast";
 
 const HabitCard = () => {
@@ -54,6 +54,18 @@ const HabitCard = () => {
               }}
               className="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-3 rounded">
                 Undo
+              </button>
+
+              <button
+              onClick={()=>{
+                const newName = prompt('Edit habit name', habit.habitName)
+                if(newName){
+                  dispatch(editHabit({id: habit.id, habitName: newName}))
+                  toast.success("Habit updated")
+                }
+              }}
+              className="bg-purple-400 hover:bg-purple-700 text-white font-bold py-2 px-3 rounded">
+                Edit
               </button>
             </div>
           </div>
