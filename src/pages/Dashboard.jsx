@@ -7,6 +7,7 @@ import AISuggestions from "../components/AISuggestions";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import HabitCalendar from "../components/HabitCalendar";
+import AchievementBadges from "../components/AchievementBadges";
 
 const Dashboard = () => {
   const loggedinUser = useSelector((state) => state.users.loggedinUser)
@@ -28,6 +29,10 @@ const Dashboard = () => {
           <div className="space-y-6">
           <DashboardStats />
           </div>
+        </div>
+
+        <div className="mt-8">
+          <AchievementBadges/>
         </div>
 
         <div className="mt-8">

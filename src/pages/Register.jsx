@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../features/auth/authSlice";
 import habitFlowIcon from "../assets/habitFlowIcon.png";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ return (
         onSubmit={handleSubmit}
         className=" w-full mx-w-md justify-self-center bg-white shadow-xl rounded-2xl p-8 space-y-5"
       >
-            <h2 className="text-2xl font-bold text-center text-purple-600">
+            <h2 className="text-2xl font-bold text-center text-purple-900">
               Register
             </h2>
             <input
@@ -100,10 +101,13 @@ return (
             />
               <button
                 type="submit"
-                className="w-full bg-purple-500 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition"
+                className="w-full bg-purple-400 hover:bg-purple-900 text-white font-semibold py-3 rounded-lg transition"
               >
                 Register
               </button>
+        <p className="text-center font-semibold">Already registered? <Link
+        className="text-blue-600" to={'/'}>
+        Login Here</Link></p>
       </form>
   </div>
 </div>
