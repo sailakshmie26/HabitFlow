@@ -15,7 +15,8 @@ export const getAISuggestions = async (habits) => {
               parts: [
                 {
                   text: `User habits: ${habits.join(",")}.
-                            Suggest 3 new productive habits.`,
+                        Suggest 3 new small, realistic, and easy-to-follow habits
+                        based on the user's existing habits. Keep it short and actionable.`,
                 },
               ],
             },

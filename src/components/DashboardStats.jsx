@@ -29,19 +29,19 @@ const DashboardStats = () => {
       <h2 className="text-xl font-bold text-green-900 mb-4">
       Statistics</h2>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-blue-50 p-4 rounded-lg text-center">
-          <p className="text-sm text-gray-600">My Habits</p>
+          <p className="text-xs text-gray-600">My Habits</p>
           <p className="text-2xl font-bold text-blue-700">{totalHabits}</p>
         </div>
 
         <div className="bg-green-50 p-4 rounded-lg text-center">
-          <p className="text-sm text-gray-600">Streak Points</p>
+          <p className="text-xs text-gray-600">Streak Points</p>
           <p className="text-2xl font-bold text-green-700">{totalStreak}🔥</p>
         </div>
 
         <div className="bg-purple-50 p-4 rounded-lg text-center">
-          <p className="text-sm text-gray-600">Completion</p>
+          <p className="text-xs text-gray-600">Completion</p>
           <p className="text-2xl font-bold text-purple-700">{completion}%</p>
         </div>
       </div>
