@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../features/auth/authSlice";
+import habitFlowIcon from "../assets/habitFlowIcon.png";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -20,124 +21,95 @@ const Register = () => {
     setFormdata((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit =(e) => {
-    e.preventDefault()
-    dispatch(register(formdata))
-    navigate("/")
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(register(formdata));
+    navigate("/");
+  };
 
-  return (
-    <>
-      <Navbar />
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center text-md font-semibold">
-        <h2>
-          Transform your daily habits into an epic adventure. Habit Flow is here
-          to help level up your life the way you have always wanted.
-        </h2>
-        <div>
-          <h2>Register now to explore!</h2>
-          <div className="w-full max-w-2xl">
-          <form
-          onSubmit={handleSubmit} 
-          className="bg-white shadow-lg rounded-xl p-10 mt-6">
-            <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full px-3 mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="username"
-                >
-                  Username
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formdata.username}
-                  className="appearance-none block w-full bg-gray-100 text-gray-700 border border-blue-400 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="username"
-                  type="text"
-                  name="username"
-                  placeholder="username"
-                  required
-                />
-              </div>
-            </div>
-            <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full px-3 mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="username"
-                >
-                  Email
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formdata.email}
-                  className="appearance-none block w-full bg-gray-100 text-gray-700 border border-blue-400 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="example@gmail.com"
-                  required
-                />
-              </div>
-            </div>
-            <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full px-3">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formdata.password}
-                  className="appearance-none block w-full bg-gray-100 text-gray-700 border border-blue-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="password"
-                  type="password"
-                  name="password"
-                  placeholder="******************"
-                  required
-                />
-                <p className="text-gray-600 text-xs italic">
-                  Make it as long and as crazy as you'd like
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap -mx-3 mb-2">
-              <div className="w-full px-3 mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="city"
-                >
-                  City
-                </label>
-                <input
-                  onChange={handleInput}
-                  value={formdata.city}
-                  className="appearance-none block w-full bg-gray-100 text-gray-700 border border-blue-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-city"
-                  type="text"
-                  name="city"
-                  placeholder="city"
-                  required
-                />
-                <div className="flex justify-center mt-4">
-                <button
-                  type="submit"
-                  className="bg-green-500 hover:bg-green-600 text-white mt-2 px-6 py-2 rounded"
-                >
-                  Register
-                </button>
-                </div>
-              </div>
-            </div>
-          </form>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+return (
+<>
+<Navbar />
+<div className="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-purple-100 to-blue-100 text-center text-md font-semibold">
+  <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl w-full">
+    
+    <div className="text-center md:text-left space-y-6">
+    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+      Transform your daily habits into 
+      <span className="text-purple-900"> an adventure</span>. Habit Flow is
+      here to help level up your life the way you have always wanted.
+    </h1>
+    <p className="text-gray-600 text-lg max-w-md">
+    Build Consistency. Track Progress. Become unstoppable.</p>
+    <img
+      src={habitFlowIcon}
+      alt="HabitFlowIcon"
+      className="w-20 mx:w-24 mx-auto md:mx-0 transform hover:scale-110 transition"
+    />
+    </div>
+  
+      <form
+        onSubmit={handleSubmit}
+        className=" w-full mx-w-md justify-self-center bg-white shadow-xl rounded-2xl p-8 space-y-5"
+      >
+            <h2 className="text-2xl font-bold text-center text-purple-600">
+              Register
+            </h2>
+            <input
+              onChange={handleInput}
+              value={formdata.username}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+              id="username"
+              type="text"
+              name="username"
+              placeholder="username"
+              required
+            />
+
+            <input
+              onChange={handleInput}
+              value={formdata.email}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+
+            <input
+              onChange={handleInput}
+              value={formdata.password}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+              id="password"
+              type="password"
+              name="password"
+              placeholder="password"
+              required
+            />
+
+            <input
+              onChange={handleInput}
+              value={formdata.city}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+              id="grid-city"
+              type="text"
+              name="city"
+              placeholder="city"
+              required
+            />
+              <button
+                type="submit"
+                className="w-full bg-purple-500 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition"
+              >
+                Register
+              </button>
+      </form>
+  </div>
+</div>
+<Footer />
+</>
+);
 };
 
 export default Register;

@@ -15,14 +15,14 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky top-0 z-50 flex justify-between items-center px-6 py-0 bg-purple-300 text-gray-700 shadow-md">
-        <div className=" flex items-center gap-3 text-black-500 text-xl py-2">
+      <div className="sticky top-0 z-50 flex justify-between items-center px-8 py-1 bg-white shadow-sm">
+        <div className="flex items-center gap-3">
           <img
             src={habitFlowIcon}
             alt="HabitFlowIcon"
-            className="w-10 h-10 transform hover:scale-110 duration-500 transition"
+            className="w-10 h-10 transform hover:scale-110 transition"
           />
-          <h1 className="text-3xl font-bold tracking-wide">HABIT FLOW</h1>
+          <h1 className="text-2xl text-purple-800 font-bold tracking-wide">HABIT FLOW</h1>
         </div>
 
         <div className="flex gap-3 text-xl py-5">
@@ -31,12 +31,12 @@ const Navbar = () => {
               onClick={handleLogout}
               className="bg-red-400 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition"
             >
-              Logout
+              LOGOUT
             </button>
           ) : (
             <Link to={"/register"}>
-              <button className="bg-blue-300 hover:bg-blue-500 text-gray-700 font-semibold py-1 px-4 rounded-full">
-                Register
+              <button className="bg-purple-500 hover:bg-purple-700 text-white font-medium py-2 px-5 rounded-full transition">
+                REGISTER
               </button>
             </Link>
           )}
