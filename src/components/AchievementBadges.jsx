@@ -19,8 +19,8 @@ const AchievementBadges = () => {
     if(totalCompletions >= 20)badges.push("🏆20 Completions!")
     if(totalCompletions >= 50)badges.push("👑Habit Master!")
   return (
-    <div className="bg-white p-4 rounded-xl shadow mt-6">
-    <h2 className="font-bold text-lg mb-3 text-purple-900">
+    <div className="bg-pink-50 p-4 rounded-xl shadow mt-6">
+    <h2 className="font-bold text-xl mb-3 text-purple-900">
     Achievements
     </h2>
     {

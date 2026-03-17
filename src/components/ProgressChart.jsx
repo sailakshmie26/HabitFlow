@@ -21,12 +21,12 @@ const ProgressChart = () => {
       <h2 className="text-xl font-bold text-purple-800 mb-4">Your Weekly Chart</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={weeklyData}>
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" opacity={0.3}/>
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="completed" fill="#82ca9d" />
+          <Bar dataKey="completed" fill="#82ca9d" radius={[6, 6, 0, 0]}/>
         </BarChart>
       </ResponsiveContainer>
     </>

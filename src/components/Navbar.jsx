@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="HabitFlowIcon"
             className="w-10 h-10 transform hover:scale-110 transition"
           />
-          <h1 className="text-2xl text-purple-800 font-bold tracking-wide">HABIT FLOW</h1>
+          <h1 className="text-2xl text-purple-900 font-bold tracking-wide">HABIT FLOW</h1>
         </div>
 
         <div className="flex gap-3 text-xl py-5">
@@ -35,7 +35,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link to={"/register"}>
-              <button className="bg-purple-500 hover:bg-purple-700 text-white font-medium py-2 px-5 rounded-full transition">
+              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full transition">
                 REGISTER
               </button>
             </Link>

@@ -45,7 +45,7 @@ const HabitCalendar = () => {
     setSelectedDate(d);
   };
   return (
-    <div className="bg-yellow-50 p-6 rounded-lg shadow mt-6">
+    <div className="bg-green-50 p-6 rounded-lg shadow mt-6">
       <h2 className="text-xl font-bold text-purple-800 mb-4">
         Habit Check-in Calendar
       </h2>

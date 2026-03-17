@@ -18,7 +18,7 @@ const HabitCard = () => {
           <p className="text-gray-500">No habits yet? Add one.</p>
         )}
         {habits.map((habit) => (
-          <div key={habit.id} className="bg-purple-50 rounded-xl shadow p-4">
+          <div key={habit.id} className="bg-teal-50 rounded-xl shadow p-4">
             <h3 className="font-semibold text-xl text-gray-900 mb-2">{habit.habitName}</h3>
 
             <p className="text-gray-700">
@@ -32,7 +32,7 @@ const HabitCard = () => {
                   dispatch(completedHabit(habit.id));
                   toast.success("Good job pal!🔥");
                 }}
-                className="bg-blue-400 hover:bg-blue-900 text-white font-bold py-2 px-3 rounded"
+                className="bg-blue-400 hover:bg-blue-900 hover:scale-105 transition text-white font-bold py-2 px-3 rounded"
               >
                 Completed
               </button>
@@ -42,7 +42,7 @@ const HabitCard = () => {
                   dispatch(deleteHabit(habit.id));
                   toast("Habit deleted",{ icon: "🗑️" });
                 }}
-                className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
+                className="bg-red-400 hover:bg-red-600 hover:scale-105 transition text-white font-bold py-1 px-3 rounded"
               >
                 Delete
               </button>
@@ -52,7 +52,7 @@ const HabitCard = () => {
                 dispatch(undoCompletedHabit(habit.id))
                 toast("Completion undone", {icon:"↩️"})
               }}
-              className="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-3 rounded">
+              className="bg-yellow-400 hover:bg-yellow-600 hover:scale-105 transition text-white font-bold py-2 px-3 rounded">
                 Undo
               </button>
 
@@ -64,7 +64,7 @@ const HabitCard = () => {
                   toast.success("Habit updated")
                 }
               }}
-              className="bg-purple-400 hover:bg-purple-700 text-white font-bold py-2 px-3 rounded">
+              className="bg-purple-400 hover:bg-purple-700 hover:scale-105 transition text-white font-bold py-2 px-3 rounded">
                 Edit
               </button>
             </div>

@@ -10,41 +10,30 @@ import HabitCalendar from "../components/HabitCalendar";
 import AchievementBadges from "../components/AchievementBadges";
 
 const Dashboard = () => {
-  const loggedinUser = useSelector((state) => state.users.loggedinUser)
+  const loggedinUser = useSelector((state) => state.users.loggedinUser);
   return (
     <>
-      <Navbar/>
-      <div className="max-w-6xl mx-auto p-6">
-        <h2 className="text-2xl text-gray-900 font-bold mb-6">Hello there 
-        <span className="font-bold text-purple-800 ms-1">{loggedinUser.username}!</span></h2>
+      <Navbar />
+      <div className="max-w-6xl mx-auto p-6 bg-gray-50 min-h-screen">
+        <h2 className="text-2xl text-gray-900 font-bold mb-6">
+          Hello{" "}
+          <span className="text-purple-800">{loggedinUser.username}!</span>👋
+        </h2>
 
         <HabitForm />
 
         <div className="grid md:grid-cols-3 gap-6 mt-6">
-          <div className="md:col-span-2">
-          <HabitCard />
+          <div className="md:col-span-2 space-y-6">
+            <HabitCard />
+            <ProgressChart />
+            <HabitCalendar />
           </div>
-          
-          
-          <div className="space-y-6">
-          <DashboardStats />
+
+          <div className="space-y-6 mt-8">
+            <DashboardStats />
+            <AchievementBadges />
+            <AISuggestions />
           </div>
-        </div>
-
-        <div className="mt-8">
-          <AchievementBadges/>
-        </div>
-
-        <div className="mt-8">
-          <ProgressChart />
-        </div>
-
-        <div className="mt-8">
-          <HabitCalendar/>
-        </div>
-
-        <div className="mt-8">
-          <AISuggestions />
         </div>
       </div>
       <Footer />
@@ -53,4 +42,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
