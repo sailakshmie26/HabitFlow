@@ -1,16 +1,49 @@
-# React + Vite
+🚀Habit Flow
+A modern habit tracking web application built using the MERN stack principles (frontend focused), designed to help users build consistency, track progress, and imrpove productivity.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Features
+✅ Add, edit, delete habits
+🔥 Daily streak tracking
+📅 Calendar view with completion highlights
+📊 Weekly progress chart (Recharts)
+📈 Completion percentage tracking
+🏆 Achievement badges system
+🤖 AI-powered habit suggestions (Google Gemini API)
+📱 Fully responsive design
 
-Currently, two official plugins are available:
+🧠 AI Feature
+Under developement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tech Stack
+Frontend: React, Redux Toolkit, Tailwind CSS
+Libraries: Recharts, React-Router, Axios, React-hot-toast, React-Calendar
+State Management: Redux
+Storage: LocalStorage
+AI Integration: under developement
+Deployment: Vercel
 
-## React Compiler
+✨Prerequisites
+Node.js (v14 or higher)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨Responsive Design 
+This application is fully responsive and tested on: 
+● Mobile devices (375px and up) 
+● Tablets (768px and up) 
+● Desktop (1024px and up) 
 
-## Expanding the ESLint configuration
+🎯Future Improvements
+Backend integration (Node.js + MongoDB)
+Authentication system with JWT
+Advanced analytics & insights
+Social habit sharing
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👩‍💻Author
+GitHub: Sailakshmie26
+LinkedIn: www.linkedin.com/in/sailakshmy-s
+Email: sailakshmys26@gmail.com
+
+💡 Inspiration
+Built to make habit building simple, consistent, and rewarding.
+
+License 
+This project is open source and available under the MIT License
