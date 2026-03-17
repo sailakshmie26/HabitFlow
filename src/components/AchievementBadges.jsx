@@ -31,13 +31,13 @@ const AchievementBadges = () => {
      ) : (
         <div className="flex flex-wrap gap-2">
         {
-          badges.map((badge, index) => {
+          badges.map((badge, index) => (
           <span 
           key={index} 
-          className="bf-purple-100 text-purple-900 px-3 py-1 rounded-full text-sm">
+          className="bg-purple-100 text-purple-900 px-3 py-1 rounded-full text-sm">
           {badge}
           </span>
-          })
+          ))
         }
         </div>
      )
