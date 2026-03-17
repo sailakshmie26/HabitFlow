@@ -21,6 +21,7 @@ State Management: Redux
 Storage: LocalStorage
 AI Integration: under developement
 Deployment: Vercel
+Live Link: https://habit-flow-beryl-two.vercel.app/
 
 ✨Prerequisites
 Node.js (v14 or higher)
