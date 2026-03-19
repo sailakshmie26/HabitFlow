@@ -32,7 +32,7 @@ const HabitCard = () => {
                   dispatch(completedHabit(habit.id));
                   toast.success("Good job pal!🔥");
                 }}
-                className="bg-blue-400 hover:bg-blue-900 hover:scale-105 transition text-white font-bold py-2 px-3 rounded"
+                className="bg-blue-500 hover:bg-blue-900 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition text-white font-semibold py-2 px-4 rounded-md"
               >
                 Completed
               </button>
@@ -42,7 +42,7 @@ const HabitCard = () => {
                   dispatch(deleteHabit(habit.id));
                   toast("Habit deleted",{ icon: "🗑️" });
                 }}
-                className="bg-red-400 hover:bg-red-600 hover:scale-105 transition text-white font-bold py-1 px-3 rounded"
+                className="bg-red-500 hover:bg-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition text-white font-semibold py-2 px-4 rounded-md"
               >
                 Delete
               </button>
@@ -52,7 +52,7 @@ const HabitCard = () => {
                 dispatch(undoCompletedHabit(habit.id))
                 toast("Completion undone", {icon:"↩️"})
               }}
-              className="bg-yellow-400 hover:bg-yellow-600 hover:scale-105 transition text-white font-bold py-2 px-3 rounded">
+              className="bg-yellow-500 hover:bg-yellow-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition text-white font-bold py-2 px-4 rounded-md">
                 Undo
               </button>
 
@@ -64,7 +64,7 @@ const HabitCard = () => {
                   toast.success("Habit updated")
                 }
               }}
-              className="bg-purple-400 hover:bg-purple-700 hover:scale-105 transition text-white font-bold py-2 px-3 rounded">
+              className="bg-purple-500 hover:bg-purple-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 transition text-white font-bold py-2 px-4 rounded-md">
                 Edit
               </button>
             </div>
