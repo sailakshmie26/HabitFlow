@@ -1,11 +1,12 @@
 import habitFlowIcon from "../assets/habitFlowIcon.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../features/auth/authSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const loggedinUser = useSelector((state) => state.users.loggedinUser);
   const handleLogout = () => {
@@ -26,19 +27,26 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-3 text-xl py-5">
-          {loggedinUser ? (
-            <button
-              onClick={handleLogout}
-              className="bg-purple-900 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded-full transition transform hover:scale-105"
-            >
-              LOGOUT
-            </button>
-          ) : (
-            <Link to={"/register"}>
-              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full transition transform hover:scale-105">
+          {location.pathname === '/' && (
+            <Link to={'/register'}>
+              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full tranistion transform hover:scale-105">
                 REGISTER
               </button>
             </Link>
+          )}
+          {location.pathname === '/register' && (
+            <Link to={'/'}>
+              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full tranistion transform hover:scale-105">
+                LOGIN
+              </button>
+            </Link>
+          )}
+          {location.pathname.startsWith("/dashboard") && loggedinUser && (
+            <button
+            onClick={handleLogout}
+            className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full tranistion transform hover:scale-105">
+              LOGOUT
+            </button>
           )}
         </div>
       </div>
