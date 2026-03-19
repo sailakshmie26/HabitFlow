@@ -46,7 +46,7 @@ const HabitCalendar = () => {
   };
   return (
     <div className="bg-green-50 p-6 rounded-lg shadow mt-6">
-      <h2 className="text-xl font-bold text-purple-800 mb-4">
+      <h2 className="text-xl font-bold text-purple-900 mb-4">
         Habit Check-in Calendar
       </h2>
 
@@ -54,7 +54,7 @@ const HabitCalendar = () => {
 
       {selectedDate && (
         <div className="mt-4 p-4 bg-white rounded shadow">
-          <h3 className="font-semibold mb-2">
+          <h3 className=" text-green-900 font-semibold mb-2">
             Habits completed on {selectedDate}
           </h3>
           {habits

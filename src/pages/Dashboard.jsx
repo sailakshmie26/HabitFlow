@@ -14,10 +14,10 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-6xl mx-auto p-6 bg-gray-50 min-h-screen">
+      <div className="max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen">
         <h2 className="text-2xl text-gray-900 font-bold mb-6">
           Hello{" "}
-          <span className="text-purple-800">{loggedinUser.username}!</span>👋
+          <span className="text-purple-900">{loggedinUser.username}!</span>👋
         </h2>
 
         <HabitForm />

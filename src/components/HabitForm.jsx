@@ -12,7 +12,7 @@ const HabitForm = () => {
   return (
     <>
       <div>
-        <h2 className="text-xl font-bold text-purple-800">Add a habit</h2>
+        <h2 className="text-xl font-bold text-purple-900">Add a habit</h2>
       </div>
       <div>
         <form className="w-full max-w-md">
@@ -57,7 +57,7 @@ const HabitForm = () => {
               setCategory("")
               toast.success("Habit added successfully!")
             }}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow transition transform hover:scale-105"
               type="button"
             >
               Add
@@ -66,7 +66,7 @@ const HabitForm = () => {
             onClick={()=>{
               setHabitName("")
             }}
-              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg"
+              className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg transition transform hover:scale-105"
               type="button"
             >
               Cancel

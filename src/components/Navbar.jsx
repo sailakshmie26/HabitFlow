@@ -29,13 +29,13 @@ const Navbar = () => {
           {loggedinUser ? (
             <button
               onClick={handleLogout}
-              className="bg-purple-900 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded-full transition"
+              className="bg-purple-900 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded-full transition transform hover:scale-105"
             >
               LOGOUT
             </button>
           ) : (
             <Link to={"/register"}>
-              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full transition">
+              <button className="bg-purple-900 hover:bg-purple-500 text-white font-medium py-2 px-5 rounded-full transition transform hover:scale-105">
                 REGISTER
               </button>
             </Link>

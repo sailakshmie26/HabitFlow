@@ -74,7 +74,7 @@ const Login = () => {
         
         <button
         type="submit"
-        className="w-full bg-purple-400 hover:bg-purple-900 text-white font-semibold py-3 rounded-lg transition">
+        className="w-full bg-purple-400 hover:bg-purple-900 text-white font-semibold py-3 rounded-lg transition transform hover:scale-105">
         Login</button>
 
         <p className="text-center font-semibold">New User? <Link

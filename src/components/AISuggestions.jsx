@@ -34,7 +34,7 @@ const AiSuggestions = () => {
 
         <button
           onClick={handleAISuggestions}
-          className="w-full bg-purple-500 hover:bg-purple-700 text-white py-2 rounded-lg transitoin mb-4"
+          className="w-full bg-purple-500 hover:bg-purple-700 text-white py-2 rounded-lg transition transform hover:scale-105 mb-4"
         >
         {loading? "Generating..." : "Generate Suggestions"}
         </button>

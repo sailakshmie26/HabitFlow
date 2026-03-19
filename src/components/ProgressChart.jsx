@@ -18,7 +18,7 @@ const ProgressChart = () => {
   const weeklyData = getWeeklyChartData(habits)
   return (
     <>
-      <h2 className="text-xl font-bold text-purple-800 mb-4">Your Weekly Chart</h2>
+      <h2 className="text-xl font-bold text-purple-900 mb-4">Your Weekly Chart</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={weeklyData}>
           <CartesianGrid strokeDasharray="3 3" opacity={0.3}/>
@@ -26,7 +26,7 @@ const ProgressChart = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="completed" fill="#82ca9d" radius={[6, 6, 0, 0]}/>
+          <Bar dataKey="completed" fill="#82ca9d" radius={[8, 8, 0, 0]}/>
         </BarChart>
       </ResponsiveContainer>
     </>

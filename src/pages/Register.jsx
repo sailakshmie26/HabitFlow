@@ -36,17 +36,18 @@ return (
     
     <div className="text-center md:text-left space-y-6">
     <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-      Transform your daily habits into 
-      <span className="text-purple-900"> an adventure</span>. Habit Flow is
+      Transform your daily habits into an adventure.
+      <span className="text-purple-900">Habit Flow</span> is
       here to help level up your life the way you have always wanted.
     </h1>
-    <p className="text-gray-600 text-lg max-w-md">
-    Build Consistency. Track Progress. Become unstoppable.</p>
-    <img
+    <p className="flex text-gray-600 text-lg max-w-md">
+      <img
       src={habitFlowIcon}
       alt="HabitFlowIcon"
       className="w-20 mx:w-24 mx-auto md:mx-0 transform hover:scale-110 transition"
     />
+    Build Consistency. Track Progress. Become unstoppable.</p>
+    
     </div>
   
       <form
@@ -101,7 +102,7 @@ return (
             />
               <button
                 type="submit"
-                className="w-full bg-purple-400 hover:bg-purple-900 text-white font-semibold py-3 rounded-lg transition"
+                className="w-full bg-purple-400 hover:bg-purple-900 text-white font-semibold py-3 rounded-lg  transition transform hover:scale-105"
               >
                 Register
               </button>
